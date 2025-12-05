@@ -24,33 +24,49 @@ const Testimonials = () => {
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-3xl"></div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8"
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block mb-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
             <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">CLIENT REVIEWS</span>
-          </div>
+          </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white"
+          >
             What <span className="text-gradient">Clients Say</span>
-          </h2>
+          </motion.h2>
           
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed"
+          >
             Don't just take our word for it — hear from businesses we've helped grow
-          </p>
+          </motion.p>
         </div>
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:border-white/10 hover:bg-black/30 transition-all duration-300 hover:-translate-y-2"
             >
               {/* Stars */}
@@ -72,10 +88,10 @@ const Testimonials = () => {
                 <div className="font-semibold text-white text-lg mb-1">{testimonial.author}</div>
                 <div className="text-sm text-gray-400">{testimonial.role}</div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

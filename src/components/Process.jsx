@@ -52,26 +52,38 @@ const Process = () => {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
       
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10"
-      >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block mb-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
             <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">THE STEPS</span>
-          </div>
+          </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white"
+          >
             How We <span className="text-gradient">Work</span>
-          </h2>
+          </motion.h2>
           
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed"
+          >
             A proven process that ensures your project's success from start to finish
-          </p>
+          </motion.p>
         </div>
 
         {/* Process Steps - All Circles */}
@@ -84,10 +96,10 @@ const Process = () => {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, scale: 0.7, rotateY: -45 }}
+                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
                 className="flex flex-col items-center"
               >
                 {/* Circular Progress Indicator */}
@@ -148,7 +160,13 @@ const Process = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center"
+        >
           <p className="text-lg text-gray-400 mb-6">
             Ready to start your project?
           </p>
@@ -157,8 +175,8 @@ const Process = () => {
               Let's Talk
             </button>
           </Link>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

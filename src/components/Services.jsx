@@ -64,33 +64,49 @@ const Services = () => {
       {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
       
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10"
-      >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block mb-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
             <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">WHAT WE DO</span>
-          </div>
+          </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white"
+          >
             What We <span className="text-gradient">Deliver</span>
-          </h2>
+          </motion.h2>
           
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed"
+          >
             Comprehensive digital solutions tailored to your business needs
-          </p>
+          </motion.p>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50, rotateX: -15 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative p-[1px] rounded-2xl overflow-visible"
               style={{
                 background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
@@ -143,10 +159,10 @@ const Services = () => {
                 {/* Bottom accent line */}
                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

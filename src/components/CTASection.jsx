@@ -9,15 +9,15 @@ const CTASection = () => {
         <div className="w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-3xl"></div>
       </div>
       
-      <motion.div 
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex items-center justify-center"
-      >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex items-center justify-center">
         {/* Animated Border Card */}
-        <div className="relative w-full max-w-5xl">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9, y: 60 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative w-full max-w-5xl"
+        >
           {/* Outer container with gradient border */}
           <div 
             className="relative rounded-3xl p-[1px] overflow-visible"
@@ -60,13 +60,25 @@ const CTASection = () => {
               {/* Content */}
               <div className="relative z-10 text-center py-20 md:py-24 px-12 md:px-20 lg:px-24">
                 {/* Dot indicator */}
-                <div className="flex justify-center items-center gap-2 mb-8">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="flex justify-center items-center gap-2 mb-8"
+                >
                   <div className="w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
                   <span className="text-blue-300 text-sm font-medium">Join Us Now</span>
-                </div>
+                </motion.div>
                 
                 {/* Heading with gradient */}
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-[1.1]">
+                <motion.h2 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-[1.1]"
+                >
                   <span 
                     className="bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent"
                     style={{
@@ -77,24 +89,37 @@ const CTASection = () => {
                   </span>
                   <br />
                   <span className="text-gray-400">is a Unique Opportunity.</span>
-                </h2>
+                </motion.h2>
                 
                 {/* Description */}
-                <p className="text-base md:text-lg text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="text-base md:text-lg text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed"
+                >
                   Ready to take the next step? Join us now and start transforming your vision into reality with expert support.
-                </p>
+                </motion.p>
                 
                 {/* CTA Button */}
-                <Link to="/contact">
-                  <button className="px-10 py-4 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-lg font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
-                    Book an Appointment
-                  </button>
-                </Link>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <Link to="/contact">
+                    <button className="px-10 py-4 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-lg font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
+                      Book an Appointment
+                    </button>
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

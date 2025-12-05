@@ -27,32 +27,46 @@ const ContactPage = () => {
     <div className="min-h-screen bg-black pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Page Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 max-w-4xl mx-auto"
-        >
-          <div className="inline-block mb-4">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
             <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">GET IN TOUCH</span>
-          </div>
+          </motion.div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
+          <motion.h1 
+            initial={{ opacity: 0, y: -40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white"
+          >
             Let's Build Something <span className="text-gradient">Great</span>
-          </h1>
+          </motion.h1>
           
-          <p className="text-lg text-gray-400">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg text-gray-400"
+          >
             Tell us what you want to create — a website, app, or a fully custom system — and we'll help you bring it to life.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
         {/* Contact Info and Form Layout */}
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Contact Info - Left Side */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: -60, rotateY: -25 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-2 space-y-8"
           >
             <div>
@@ -71,9 +85,10 @@ const ContactPage = () => {
 
           {/* Contact Form - Right Side */}
           <motion.form
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: 60, rotateY: 25 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             onSubmit={handleSubmit}
             className="lg:col-span-3 bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-8"
           >
