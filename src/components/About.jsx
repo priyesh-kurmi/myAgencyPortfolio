@@ -18,71 +18,37 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10"
+        className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center"
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="order-2 lg:order-1">
-            <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-              <span className="text-sm text-blue-400 font-medium uppercase tracking-widest">About Us</span>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
-              Crafting Digital<br />
-              <span className="text-gradient">Experiences</span> That<br />
-              Actually Work
-            </h2>
-            
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              We're a small, sharp, and passionate team that designs and develops custom solutions for businesses. 
-              From sleek websites to powerful mobile apps and fully bespoke systems — we turn ideas into real products that scale.
-            </p>
+        <div className="inline-block mb-4">
+          <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">WHO WE ARE</span>
+        </div>
+          
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
+          Crafting Digital <span className="text-gradient">Experiences</span> That Actually Work
+        </h2>
+        
+        <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl mx-auto">
+          We're a small, sharp, and passionate team that designs and develops custom solutions for businesses. 
+          From sleek websites to powerful mobile apps and fully bespoke systems — we turn ideas into real products that scale.
+        </p>
 
-            <div className="space-y-4 mb-8">
-              <h3 className="text-lg font-semibold text-white uppercase tracking-wider">We focus on:</h3>
-              <div className="grid sm:grid-cols-2 gap-5">
-                {focusAreas.map((area, index) => (
-                  <div key={index} className="flex items-center gap-4 group">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>
-                    <span className="text-gray-300 group-hover:text-white transition-colors">{area}</span>
-                  </div>
-                ))}
+        <div className="mb-12">
+          <h3 className="text-lg font-semibold text-white uppercase tracking-wider mb-6">We focus on:</h3>
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto text-left">
+            {focusAreas.map((area, index) => (
+              <div key={index} className="flex items-center gap-4 group">
+                <div className="w-2 h-2 bg-blue-500 rounded-full group-hover:scale-150 transition-transform"></div>
+                <span className="text-gray-300 group-hover:text-white transition-colors">{area}</span>
               </div>
-            </div>
-
-            <div className="bg-blue-500/5 border border-blue-500/20 rounded-2xl p-6">
-              <p className="text-lg text-white font-medium leading-relaxed">
-                No fluff. No outsourcing. Just high-quality work delivered with care.
-              </p>
-            </div>
+            ))}
           </div>
+        </div>
 
-          {/* Right Content - Visual Element */}
-          <div className="order-1 lg:order-2">
-            <div className="relative bg-blue-500/5 backdrop-blur-sm rounded-3xl p-8 border border-blue-500/20">
-              <div className="space-y-6">
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-black/50 rounded-2xl p-6 border border-blue-500/10 hover:border-blue-500/30 transition-all group">
-                    <div className="text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform">50+</div>
-                    <div className="text-sm text-gray-400 uppercase tracking-wide">Projects Delivered</div>
-                  </div>
-                  <div className="bg-black/50 rounded-2xl p-6 border border-blue-500/10 hover:border-blue-500/30 transition-all group">
-                    <div className="text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform">100%</div>
-                    <div className="text-sm text-gray-400 uppercase tracking-wide">Client Satisfaction</div>
-                  </div>
-                  <div className="bg-black/50 rounded-2xl p-6 border border-blue-500/10 hover:border-blue-500/30 transition-all group">
-                    <div className="text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform">5+</div>
-                    <div className="text-sm text-gray-400 uppercase tracking-wide">Years Experience</div>
-                  </div>
-                  <div className="bg-black/50 rounded-2xl p-6 border border-blue-500/10 hover:border-blue-500/30 transition-all group">
-                    <div className="text-4xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform">24/7</div>
-                    <div className="text-sm text-gray-400 uppercase tracking-wide">Support Available</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="bg-black/20 backdrop-blur-sm border border-white rounded-2xl p-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white font-medium leading-relaxed">
+            No fluff. No outsourcing. Just high-quality work delivered with care.
+          </p>
         </div>
       </motion.div>
     </section>

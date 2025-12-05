@@ -33,8 +33,8 @@ const Testimonials = () => {
       >
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-            <span className="text-sm text-blue-400 font-medium uppercase tracking-widest">Testimonials</span>
+          <div className="inline-block mb-4">
+            <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">CLIENT REVIEWS</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
@@ -51,7 +51,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-blue-500/5 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-6 hover:border-blue-500/40 transition-all duration-300 hover:bg-blue-500/10 hover:-translate-y-2"
+              className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:border-white/10 hover:bg-black/30 transition-all duration-300 hover:-translate-y-2"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-5">
@@ -68,7 +68,7 @@ const Testimonials = () => {
               </p>
 
               {/* Author */}
-              <div className="border-t border-blue-500/20 pt-4">
+              <div className="border-t border-white/5 pt-4">
                 <div className="font-semibold text-white text-lg mb-1">{testimonial.author}</div>
                 <div className="text-sm text-gray-400">{testimonial.role}</div>
               </div>

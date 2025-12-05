@@ -36,8 +36,8 @@ const Portfolio = () => {
       >
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-            <span className="text-sm text-blue-400 font-medium uppercase tracking-widest">Portfolio</span>
+          <div className="inline-block mb-4">
+            <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">OUR WORK</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
@@ -54,10 +54,10 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-blue-500/5 border border-blue-500/20 rounded-3xl overflow-hidden hover:border-blue-500/40 transition-all duration-300 hover:-translate-y-2"
+              className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 hover:bg-black/30 transition-all duration-300"
             >
               {/* Project Image Placeholder */}
-              <div className="relative h-48 bg-blue-500/10 overflow-hidden">
+              <div className="relative h-48 bg-white/5 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg className="w-20 h-20 text-blue-400/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -81,7 +81,7 @@ const Portfolio = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-sm text-blue-300"
+                      className="px-4 py-2 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full text-sm text-blue-300"
                     >
                       {tag}
                     </span>
@@ -93,7 +93,7 @@ const Portfolio = () => {
         </div>
 
         {/* Note */}
-        <div className="text-center bg-blue-500/5 border border-blue-500/20 rounded-3xl p-6">
+        <div className="text-center bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6">
           <p className="text-gray-400 text-lg">
             <span className="font-semibold text-white">Note:</span> You can add thumbnails and links to your actual projects here as you complete them.
           </p>

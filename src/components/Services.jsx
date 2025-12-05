@@ -73,8 +73,8 @@ const Services = () => {
       >
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-            <span className="text-sm text-blue-400 font-medium uppercase tracking-widest">Our Services</span>
+          <div className="inline-block mb-4">
+            <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">WHAT WE DO</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
@@ -91,7 +91,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-blue-500/5 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-6 hover:bg-blue-500/10 transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-2"
+              className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:bg-black/30 hover:border-white/10 transition-all duration-300"
             >
               {/* Icon */}
               <div className="text-blue-400 mb-6 group-hover:scale-110 group-hover:text-blue-300 transition-all">

@@ -58,8 +58,8 @@ const Process = () => {
       >
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-            <span className="text-sm text-blue-400 font-medium uppercase tracking-widest">Our Process</span>
+          <div className="inline-block mb-4">
+            <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">THE STEPS</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
@@ -76,9 +76,9 @@ const Process = () => {
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {/* Card */}
-              <div className="relative z-10 bg-blue-500/5 backdrop-blur-sm border border-blue-500/20 rounded-3xl p-6 hover:border-blue-500/40 transition-all duration-300 hover:bg-blue-500/10 hover:-translate-y-2 group h-full">
+              <div className="relative z-10 bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:border-white/10 hover:bg-black/30 transition-all duration-300 group h-full">
                 {/* Step Number */}
-                <div className="text-6xl font-bold text-blue-500/20 mb-4 group-hover:text-blue-500/30 transition-colors">
+                <div className="text-6xl font-bold text-white/5 mb-4 group-hover:text-white/10 transition-colors">
                   {step.number}
                 </div>
 
@@ -111,7 +111,7 @@ const Process = () => {
               const element = document.getElementById('contact');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-8 py-3.5 bg-blue-600 text-white hover:bg-blue-700 rounded-full text-base font-semibold transition-all hover:scale-105 glow-blue-strong"
+            className="px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-sm font-medium transition-all"
           >
             Let's Talk
           </button>

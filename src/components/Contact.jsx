@@ -38,8 +38,8 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-10">
-            <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
-              <span className="text-sm text-blue-400 font-medium uppercase tracking-widest">Get In Touch</span>
+            <div className="inline-block mb-4">
+              <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.2em]">GET IN TOUCH</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] text-white">
@@ -52,7 +52,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="bg-blue-500/5 border border-blue-500/20 rounded-3xl p-8">
+          <form onSubmit={handleSubmit} className="bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-8">
             <div className="space-y-6">
               {/* Name Input */}
               <div>
@@ -66,7 +66,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-3 bg-black border border-blue-500/20 rounded-xl focus:outline-none focus:border-blue-500/60 transition-all text-white placeholder-gray-500"
+                  className="w-full px-5 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all text-white placeholder-gray-500"
                   placeholder="John Doe"
                 />
               </div>
@@ -83,7 +83,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-3 bg-black border border-blue-500/20 rounded-xl focus:outline-none focus:border-blue-500/60 transition-all text-white placeholder-gray-500"
+                  className="w-full px-5 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all text-white placeholder-gray-500"
                   placeholder="john@example.com"
                 />
               </div>
@@ -100,7 +100,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-5 py-3 bg-black border border-blue-500/20 rounded-xl focus:outline-none focus:border-blue-500/60 transition-all text-white resize-none placeholder-gray-500"
+                  className="w-full px-5 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:border-blue-500/50 transition-all text-white resize-none placeholder-gray-500"
                   placeholder="Describe your project, goals, and timeline..."
                 />
               </div>
@@ -117,7 +117,7 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="grid md:grid-cols-3 gap-4 mt-10">
-            <div className="text-center p-6 bg-blue-500/5 border border-blue-500/20 rounded-2xl hover:bg-blue-500/10 hover:border-blue-500/40 transition-all">
+            <div className="text-center p-6 bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl hover:bg-black/30 hover:border-white/10 transition-all">
               <svg className="w-10 h-10 mx-auto mb-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
