@@ -99,6 +99,25 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes moveDot {
+  0%, 100% {
+    top: 10%;
+    right: 10%;
+  }
+  25% {
+    top: 10%;
+    right: calc(100% - 10% - 5px);
+  }
+  50% {
+    top: calc(100% - 10% - 5px);
+    right: calc(100% - 10% - 5px);
+  }
+  75% {
+    top: calc(100% - 10% - 5px);
+    right: 10%;
+  }
+}
+
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }

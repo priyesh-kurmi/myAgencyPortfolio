@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-8 text-center">
+        <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-sm border border-white rounded-3xl p-8 text-center">
           <p className="text-xl font-semibold mb-2 text-white">We're not a big agency.</p>
           <p className="text-lg text-gray-400">
             We're a partner who actually cares about your product.

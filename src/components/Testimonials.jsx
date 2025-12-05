@@ -4,23 +4,23 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: "They delivered our website in record time — clean, fast, and perfectly aligned with our brand.",
-      author: "Client Name",
+      author: "Oliver Hampton",
       role: "CEO, Tech Startup"
     },
     {
       quote: "The app they built transformed our operations. Extremely professional team.",
-      author: "Client Name",
+      author: "Charlotte Whitmore",
       role: "Founder, E-Commerce"
     },
     {
       quote: "Outstanding quality and communication throughout the project. Highly recommended!",
-      author: "Client Name",
+      author: "James Pemberton",
       role: "Product Manager, SaaS"
     }
   ];
 
   return (
-    <section className="py-20 bg-zinc-950 relative overflow-hidden">
+    <section className="py-20 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-3xl"></div>
 
@@ -74,11 +74,6 @@ const Testimonials = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Note for adding more testimonials */}
-        <div className="text-center mt-12 text-gray-500 italic">
-          Add more testimonials as you get real clients
         </div>
       </motion.div>
     </section>

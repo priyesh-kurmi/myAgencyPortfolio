@@ -60,7 +60,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-zinc-950 relative overflow-hidden">
+    <section id="services" className="py-20 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
       
@@ -91,22 +91,58 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6 hover:bg-black/30 hover:border-white/10 transition-all duration-300"
+              className="group relative p-[1px] rounded-2xl overflow-visible"
+              style={{
+                background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+              }}
             >
-              {/* Icon */}
-              <div className="text-blue-400 mb-6 group-hover:scale-110 group-hover:text-blue-300 transition-all">
-                {service.icon}
+              {/* Glow effect */}
+              <div 
+                className="absolute -z-10 top-8 left-0 right-0 h-full w-full opacity-15 blur-2xl transition-opacity duration-500"
+                style={{
+                  background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+                  transform: 'scale(0.85)',
+                }}
+              />
+              
+              {/* Card content */}
+              <div className="relative bg-black rounded-2xl p-8 h-full overflow-hidden">
+                {/* Animated background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
+                    backgroundSize: '32px 32px'
+                  }}></div>
+                </div>
+                
+                {/* Floating orb */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+                
+                {/* Icon in a box with gradient border - centered */}
+                <div className="mb-6 relative flex justify-center">
+                  <div className="inline-flex p-[2px] rounded-xl bg-gradient-to-br from-blue-400 to-blue-600">
+                    <div className="bg-black/80 backdrop-blur-sm p-4 rounded-xl">
+                      <div className="text-blue-400 transition-all">
+                        {service.icon}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Title with subtle glow */}
+                <h3 className="relative text-xl font-bold mb-4 text-white transition-all leading-tight text-center">
+                  <span className="relative z-10">{service.title}</span>
+                  <span className="absolute inset-0 blur-sm text-blue-400/20">{service.title}</span>
+                </h3>
+                
+                {/* Description */}
+                <p className="relative text-sm text-gray-400 leading-relaxed text-center">
+                  {service.description}
+                </p>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
               </div>
-              
-              {/* Title */}
-              <h3 className="text-xl font-bold mb-3 text-white transition-all leading-tight">
-                {service.title}
-              </h3>
-              
-              {/* Description */}
-              <p className="text-gray-400 leading-relaxed">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>

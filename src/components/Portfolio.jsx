@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const projects = [
@@ -91,12 +92,13 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-
-        {/* Note */}
-        <div className="text-center bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl p-6">
-          <p className="text-gray-400 text-lg">
-            <span className="font-semibold text-white">Note:</span> You can add thumbnails and links to your actual projects here as you complete them.
-          </p>
+        {/* View All Projects Button */}
+        <div className="text-center mt-12">
+          <Link to="/projects">
+            <button className="px-8 py-3.5 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-base font-semibold transition-all hover:scale-[1.02] glow-blue-strong">
+              View All Projects
+            </button>
+          </Link>
         </div>
       </motion.div>
     </section>

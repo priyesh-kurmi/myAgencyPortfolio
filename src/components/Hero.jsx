@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -17,7 +18,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-black">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-grid opacity-100"></div>
       
@@ -30,10 +31,10 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center"
+        className="relative z-10 w-full mx-auto px-0 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 text-center"
       >
         {/* Star Rating Badge */}
-        <div className="inline-flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-6 sm:mb-8">
+        <div className="inline-flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 sm:mb-8">
           <div className="flex gap-0.5 sm:gap-1">
             {[...Array(5)].map((_, i) => (
               <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -45,31 +46,29 @@ const Hero = () => {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-[1.15] tracking-tight px-4 sm:px-2">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-6 leading-[1.15] tracking-tight px-6 sm:px-8">
           <span className="block text-white">We Build Custom</span>
           <span className="block text-gradient">Software That Moves</span>
           <span className="block text-gray-500 mt-1 sm:mt-2">Businesses Forward</span>
         </h1>
 
         {/* Sub-headline */}
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-10 max-w-3xl mx-auto font-light leading-relaxed px-8 sm:px-8">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-10 sm:mb-10 mx-auto font-light leading-relaxed px-6 sm:px-8 max-w-[90%] sm:max-w-3xl">
           Websites, apps, and tailored digital products — built fast, built beautifully, built for growth.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16 md:mb-20 px-8 sm:px-8">
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-semibold"
-          >
-            START YOUR PROJECT
-          </button>
-          <button 
-            onClick={() => scrollToSection('portfolio')}
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/20 text-white rounded-lg text-sm font-semibold transition-all"
-          >
-            VIEW OUR WORK
-          </button>
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center mb-14 sm:mb-16 md:mb-20 px-6 sm:px-8">
+          <Link to="/contact" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-semibold">
+              START YOUR PROJECT
+            </button>
+          </Link>
+          <Link to="/projects" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 hover:bg-white/20 text-white rounded-lg text-sm font-semibold transition-all">
+              VIEW OUR WORK
+            </button>
+          </Link>
         </div>
 
         {/* Scrolling Feature Tags - only on mobile */}

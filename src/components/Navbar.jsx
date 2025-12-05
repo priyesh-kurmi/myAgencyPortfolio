@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +26,33 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsMenuOpen(false);
+  };
+
+  const handleHomeClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -37,7 +62,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 cursor-pointer" onClick={handleLogoClick}>
             <div className="flex items-center gap-2">
               <svg className="w-8 h-8 text-blue-500" viewBox="0 0 40 40" fill="currentColor">
                 <circle cx="8" cy="20" r="3"/>
@@ -48,8 +73,8 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors text-sm">
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
+            <button onClick={handleHomeClick} className="text-gray-300 hover:text-white transition-colors text-sm">
               Home
             </button>
             <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors text-sm">
@@ -58,19 +83,18 @@ const Navbar = () => {
             <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-white transition-colors text-sm">
               Portfolio
             </button>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors text-sm">
+            <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
               Contact
-            </button>
-            <button className="text-gray-300 hover:text-white transition-colors text-sm">
-              FAQ
-            </button>
+            </Link>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <button onClick={() => scrollToSection('contact')} className="px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium">
-              Get In Touch
-            </button>
+            <Link to="/contact">
+              <button className="px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium">
+                Get In Touch
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,7 +107,10 @@ const Navbar = () => {
                 {isMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16h16" />
+                  </>
                 )}
               </svg>
             </button>
@@ -92,26 +119,29 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-3">
-              <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors text-left text-sm">
-                Home
-              </button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors text-left text-sm">
-                About
-              </button>
-              <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-white transition-colors text-left text-sm">
-                Portfolio
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors text-left text-sm">
-                Contact
-              </button>
-              <button className="text-gray-300 hover:text-white transition-colors text-left text-sm">
-                FAQ
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium mt-2">
-                Get In Touch
-              </button>
+          <div className="md:hidden absolute left-0 right-0 top-full bg-black/95 backdrop-blur-xl border-t border-white/10 shadow-2xl">
+            <div className="max-w-7xl mx-auto px-6 py-6">
+              <div className="flex flex-col space-y-1">
+                <button onClick={handleHomeClick} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
+                  Home
+                </button>
+                <button onClick={() => scrollToSection('about')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
+                  About
+                </button>
+                <button onClick={() => scrollToSection('portfolio')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
+                  Portfolio
+                </button>
+                <Link to="/contact" className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block" onClick={() => setIsMenuOpen(false)}>
+                  Contact
+                </Link>
+                <div className="pt-4">
+                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                    <button className="w-full px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium shadow-lg shadow-blue-500/20">
+                      Get In Touch
+                    </button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         )}
