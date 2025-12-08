@@ -60,7 +60,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-black relative overflow-hidden">
+    <section id="services" className="py-10 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
       
@@ -99,7 +99,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}

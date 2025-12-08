@@ -48,7 +48,7 @@ const Process = () => {
   const circumference = 2 * Math.PI * 140;
 
   return (
-    <section id="process" className="py-20 bg-black relative overflow-hidden">
+    <section id="process" className="py-10 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
       

@@ -24,7 +24,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-black relative overflow-hidden">
+    <section id="portfolio" className="py-10 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"></div>
       

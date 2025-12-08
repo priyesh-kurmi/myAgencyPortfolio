@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="py-10 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-3xl"></div>
@@ -58,7 +58,7 @@ const CTASection = () => {
               />
               
               {/* Content */}
-              <div className="relative z-10 text-center py-20 md:py-24 px-12 md:px-20 lg:px-24">
+              <div className="relative z-10 text-center py-10 md:py-12 px-12 md:px-20 lg:px-24">
                 {/* Dot indicator */}
                 <motion.div 
                   initial={{ opacity: 0, scale: 0 }}
