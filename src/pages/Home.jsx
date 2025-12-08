@@ -9,7 +9,7 @@ import CTASection from '../components/CTASection'
 
 function Home() {
   return (
-    <>
+    <div className="select-none">
       <Hero />
       <About />
       <Services />
@@ -18,7 +18,7 @@ function Home() {
       <Portfolio />
       <Testimonials />
       <CTASection />
-    </>
+    </div>
   )
 }
 
