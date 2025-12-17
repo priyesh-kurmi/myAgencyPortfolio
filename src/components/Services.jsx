@@ -107,22 +107,14 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative p-[1px] rounded-2xl overflow-visible"
+              className="group relative rounded-2xl overflow-visible transition-all duration-300 hover:shadow-[0px_0px_30px_1px_rgba(59,130,246,0.30)]"
               style={{
-                background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
+                background: 'linear-gradient(163deg, #3b82f6 0%, #1e40af 100%)',
+                padding: '2px',
               }}
             >
-              {/* Glow effect */}
-              <div 
-                className="absolute -z-10 top-8 left-0 right-0 h-full w-full opacity-15 blur-2xl transition-opacity duration-500"
-                style={{
-                  background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
-                  transform: 'scale(0.85)',
-                }}
-              />
-              
               {/* Card content */}
-              <div className="relative bg-black rounded-2xl p-8 h-full overflow-hidden">
+              <div className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-[18px] p-8 h-full overflow-hidden transition-all duration-200 hover:scale-[0.98]">
                 {/* Animated background pattern */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{

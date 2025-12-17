@@ -16,7 +16,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
               <p className="leading-relaxed">
-                By accessing and using AgencyDP's services, you agree to be bound by these Terms of Service and all 
+                By accessing and using Webscon's services, you agree to be bound by these Terms of Service and all 
                 applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from 
                 using or accessing our services.
               </p>
@@ -25,7 +25,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">2. Services Description</h2>
               <p className="leading-relaxed">
-                AgencyDP provides custom software development services including web development, mobile app development, 
+                Webscon provides custom software development services including web development, mobile app development, 
                 UI/UX design, and custom software solutions. We reserve the right to modify or discontinue any service 
                 without notice at any time.
               </p>
@@ -47,7 +47,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">4. Intellectual Property Rights</h2>
               <p className="leading-relaxed">
-                The services and their original content, features, and functionality are owned by AgencyDP and are 
+                The services and their original content, features, and functionality are owned by Webscon and are 
                 protected by international copyright, trademark, patent, trade secret, and other intellectual property laws. 
                 Upon full payment for custom development work, you will own the rights to the final deliverables as specified 
                 in your project agreement.
@@ -70,7 +70,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-bold text-white mb-4">6. Project Timeline</h2>
               <p className="leading-relaxed">
                 Project timelines are estimates and may be subject to change based on project complexity, client feedback, 
-                and availability of required resources. AgencyDP will make reasonable efforts to meet agreed-upon deadlines 
+                and availability of required resources. Webscon will make reasonable efforts to meet agreed-upon deadlines 
                 but is not liable for delays caused by circumstances beyond our control.
               </p>
             </section>
@@ -78,7 +78,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">7. Limitation of Liability</h2>
               <p className="leading-relaxed">
-                AgencyDP shall not be liable for any indirect, incidental, special, consequential or punitive damages, 
+                Webscon shall not be liable for any indirect, incidental, special, consequential or punitive damages, 
                 including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting 
                 from your access to or use of or inability to access or use the services.
               </p>
@@ -88,7 +88,7 @@ const TermsOfService = () => {
               <h2 className="text-2xl font-bold text-white mb-4">8. Warranty Disclaimer</h2>
               <p className="leading-relaxed">
                 Our services are provided "as is" and "as available" without any warranties of any kind, either express or 
-                implied. AgencyDP does not warrant that the services will be uninterrupted, timely, secure, or error-free.
+                implied. Webscon does not warrant that the services will be uninterrupted, timely, secure, or error-free.
               </p>
             </section>
 
@@ -114,8 +114,8 @@ const TermsOfService = () => {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <p className="mt-4 leading-relaxed">
-                <strong>AgencyDP</strong><br />
-                Email: hello@agencydp.com<br />
+                <strong>Webscon</strong><br />
+                Email: hello@webscon.com<br />
                 Phone: +1 (555) 123-4567
               </p>
             </section>

@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-4">AgencyDP</h3>
+            <h3 className="text-2xl lg:text-3xl font-medium text-white mb-4" style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive' }}>Webscon</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Building custom software that moves businesses forward.
             </p>
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-blue-500/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
-            <p>© {currentYear} AgencyDP. All rights reserved.</p>
+            <p>© {currentYear} Webscon. All rights reserved.</p>
             <div className="flex gap-6">
               <Link to="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-blue-400 transition-colors">Terms of Service</Link>

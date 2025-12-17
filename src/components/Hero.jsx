@@ -19,32 +19,29 @@ const Hero = () => {
 
   return (
     <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden bg-black">
-      {/* Background grid pattern */}
-      <div className="absolute inset-0 bg-grid opacity-100"></div>
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black"></div>
       
       {/* Animated gradient orbs - blue only */}
       <div className="absolute top-20 left-10 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-600/15 rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-32 right-20 w-[250px] h-[250px] md:w-[450px] md:h-[450px] bg-blue-500/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '3s' }}></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '6s' }}></div>
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0">
+        <div className="absolute top-[20%] left-[10%] w-2 h-2 bg-blue-500/30 rounded-full animate-float"></div>
+        <div className="absolute top-[40%] right-[15%] w-3 h-3 bg-blue-400/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-[30%] left-[20%] w-2 h-2 bg-blue-600/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-[60%] right-[25%] w-2 h-2 bg-blue-500/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-[20%] right-[10%] w-3 h-3 bg-blue-400/20 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+      </div>
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 w-full mx-auto px-0 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 text-center"
+        className="relative z-10 w-full mx-auto px-0 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-20 text-center mt-24 sm:mt-32 md:mt-16 lg:mt-20 xl:mt-24"
       >
-        {/* Star Rating Badge */}
-        <div className="inline-flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 sm:mb-8">
-          <div className="flex gap-0.5 sm:gap-1">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <span className="text-xs sm:text-sm text-gray-300 font-medium">Trusted by 50+ happy clients</span>
-        </div>
-
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-6 leading-[1.15] tracking-tight px-6 sm:px-8">
           <span className="block text-white">We Build Custom</span>
@@ -58,7 +55,7 @@ const Hero = () => {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center mb-14 sm:mb-16 md:mb-20 px-6 sm:px-8">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-6 sm:px-8">
           <Link to="/contact" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-semibold">
               START YOUR PROJECT
@@ -69,6 +66,18 @@ const Hero = () => {
               VIEW OUR WORK
             </button>
           </Link>
+        </div>
+
+        {/* Star Rating Badge */}
+        <div className="inline-flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full mb-8 sm:mb-10">
+          <div className="flex gap-0.5 sm:gap-1">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-xs sm:text-sm text-gray-300 font-medium">Trusted by 50+ happy clients</span>
         </div>
 
         {/* Scrolling Feature Tags - only on mobile */}

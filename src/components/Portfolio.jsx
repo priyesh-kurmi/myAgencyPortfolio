@@ -4,22 +4,25 @@ import { Link } from 'react-router-dom';
 const Portfolio = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      category: 'Web Application',
-      description: 'Full-stack e-commerce solution with payment integration',
-      tags: ['React', 'Node.js', 'MongoDB']
+      title: 'Noas Café',
+      category: 'Corporate Website',
+      description: 'Premium specialty coffee and corporate catering platform across 9+ London locations',
+      tags: ['React', 'Next.js', 'E-commerce'],
+      url: 'https://www.noas.uk/'
     },
     {
-      title: 'Healthcare App',
-      category: 'Mobile App',
-      description: 'Patient management system for healthcare providers',
-      tags: ['React Native', 'Firebase']
+      title: 'Eversham Chauffeurs',
+      category: 'Luxury Service Website',
+      description: 'Elite chauffeur booking platform featuring premium fleet management and 24/7 service',
+      tags: ['React', 'Booking System', 'CMS'],
+      url: 'https://www.evershamchauffeurs.co.uk/'
     },
     {
-      title: 'SaaS Dashboard',
-      category: 'Web Application',
-      description: 'Analytics dashboard with real-time data visualization',
-      tags: ['React', 'D3.js', 'PostgreSQL']
+      title: 'Noas Catering',
+      category: 'Catering Platform',
+      description: 'London\'s trusted office and event catering service with custom menu ordering',
+      tags: ['React', 'Order System', 'CMS'],
+      url: 'https://www.noascatering.co.uk/'
     }
   ];
 
@@ -65,14 +68,20 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
-            <motion.div
+            <a
               key={index}
-              initial={{ opacity: 0, y: 60, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 hover:bg-black/30 transition-all duration-300"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
+              <motion.div
+                initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 hover:bg-black/30 transition-all duration-300 cursor-pointer"
+              >
               {/* Project Image Placeholder */}
               <div className="relative h-48 bg-white/5 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -105,7 +114,8 @@ const Portfolio = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+              </motion.div>
+            </a>
           ))}
         </div>
         {/* View All Projects Button */}

@@ -71,7 +71,7 @@ const ContactPage = () => {
           >
             <div>
               <div className="text-sm text-gray-500 mb-2 uppercase tracking-wider">Email</div>
-              <div className="text-lg font-semibold text-white">hello@agencydp.com</div>
+              <div className="text-lg font-semibold text-white">hello@webscon.com</div>
             </div>
             <div>
               <div className="text-sm text-gray-500 mb-2 uppercase tracking-wider">Phone</div>

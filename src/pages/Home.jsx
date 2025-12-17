@@ -4,6 +4,7 @@ import Services from '../components/Services'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Process from '../components/Process'
 import Portfolio from '../components/Portfolio'
+import Pricing from '../components/Pricing'
 import Testimonials from '../components/Testimonials'
 import CTASection from '../components/CTASection'
 
@@ -16,6 +17,7 @@ function Home() {
       <WhyChooseUs />
       <Process />
       <Portfolio />
+      <Pricing />
       <Testimonials />
       <CTASection />
     </div>

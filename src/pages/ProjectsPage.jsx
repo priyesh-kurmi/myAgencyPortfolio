@@ -3,46 +3,36 @@ import { motion } from 'framer-motion';
 const ProjectsPage = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      category: 'Web Application',
-      description: 'Full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      year: '2024'
+      title: 'Noas Café',
+      category: 'Corporate Website',
+      description: 'Multi-location specialty coffee and corporate catering platform. Features online ordering, menu management, catering services booking, and location finder. Roasted in-house, served across 9+ London locations.',
+      tags: ['React', 'Next.js', 'E-commerce', 'CMS'],
+      year: '2024',
+      url: 'https://www.noas.uk/'
     },
     {
-      title: 'Healthcare App',
-      category: 'Mobile App',
-      description: 'Patient management system for healthcare providers with appointment scheduling and telemedicine features.',
-      tags: ['React Native', 'Firebase', 'WebRTC'],
-      year: '2024'
+      title: 'Eversham Chauffeurs',
+      category: 'Luxury Service Website',
+      description: 'Elite chauffeur booking platform featuring premium fleet management, vehicle selection (Bentley, Rolls-Royce, Range Rover), 24/7 booking system, and customer testimonial management.',
+      tags: ['React', 'Booking System', 'CMS', 'Payment Integration'],
+      year: '2024',
+      url: 'https://www.evershamchauffeurs.co.uk/'
     },
     {
-      title: 'SaaS Dashboard',
-      category: 'Web Application',
-      description: 'Analytics dashboard with real-time data visualization, custom reports, and team collaboration tools.',
-      tags: ['React', 'D3.js', 'PostgreSQL', 'WebSocket'],
-      year: '2024'
+      title: 'Noas Catering',
+      category: 'Catering Platform',
+      description: 'London\'s trusted office and event catering service with custom menu ordering, dietary requirements management, quote requests, business accounts, and allergen tracking system.',
+      tags: ['React', 'Order System', 'CMS', 'User Accounts'],
+      year: '2024',
+      url: 'https://www.noascatering.co.uk/'
     },
     {
-      title: 'Fitness Tracking App',
-      category: 'Mobile App',
-      description: 'Comprehensive fitness tracker with workout plans, nutrition tracking, and progress analytics.',
-      tags: ['React Native', 'Redux', 'Node.js'],
-      year: '2023'
-    },
-    {
-      title: 'Real Estate Platform',
-      category: 'Web Application',
-      description: 'Property listing and management platform with virtual tours and advanced search filters.',
-      tags: ['Next.js', 'MongoDB', 'Mapbox'],
-      year: '2023'
-    },
-    {
-      title: 'Educational Platform',
-      category: 'Web Application',
-      description: 'Online learning platform with video courses, quizzes, and student progress tracking.',
-      tags: ['React', 'Express', 'MySQL', 'AWS'],
-      year: '2023'
+      title: 'OfficeHour',
+      category: 'Business Management SaaS',
+      description: 'All-in-one business management platform with role-based access control, task management, client management, group chat, and smart dashboard with real-time insights for modern teams.',
+      tags: ['React', 'Node.js', 'Real-time Chat', 'Dashboard'],
+      year: '2024',
+      url: 'https://officehour.vercel.app/'
     }
   ];
 
@@ -85,14 +75,20 @@ const ProjectsPage = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <a
               key={index}
-              initial={{ opacity: 0, y: 70, scale: 0.85 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: index * 0.12, ease: "easeOut" }}
-              className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 hover:bg-black/30 transition-all duration-300"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
+              <motion.div
+                initial={{ opacity: 0, y: 70, scale: 0.85 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.7, delay: index * 0.12, ease: "easeOut" }}
+                className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 hover:bg-black/30 transition-all duration-300 cursor-pointer"
+              >
               {/* Project Image Placeholder */}
               <div className="relative h-56 bg-white/5 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -130,7 +126,8 @@ const ProjectsPage = () => {
                   ))}
                 </div>
               </div>
-            </motion.div>
+              </motion.div>
+            </a>
           ))}
         </div>
       </div>

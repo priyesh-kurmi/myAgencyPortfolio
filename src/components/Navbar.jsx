@@ -63,13 +63,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer" onClick={handleLogoClick}>
-            <div className="flex items-center gap-2">
-              <svg className="w-8 h-8 text-blue-500" viewBox="0 0 40 40" fill="currentColor">
-                <circle cx="8" cy="20" r="3"/>
-                <circle cx="20" cy="20" r="3"/>
-                <circle cx="32" cy="20" r="3"/>
-              </svg>
-            </div>
+            <h1 className="text-2xl lg:text-3xl font-medium text-white transition-all duration-300" style={{ fontFamily: '"Brush Script MT", "Lucida Handwriting", "Dancing Script", cursive' }}>
+              Webscon
+            </h1>
           </div>
 
           {/* Desktop Menu */}

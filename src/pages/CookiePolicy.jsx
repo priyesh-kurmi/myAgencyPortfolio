@@ -18,13 +18,13 @@ const CookiePolicy = () => {
               <p className="leading-relaxed">
                 Cookies are small text files that are placed on your computer or mobile device when you visit a website. 
                 They are widely used to make websites work more efficiently, as well as to provide information to the 
-                owners of the site. AgencyDP uses cookies to improve your experience on our website.
+                owners of the site. Webscon uses cookies to improve your experience on our website.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">2. How We Use Cookies</h2>
-              <p className="leading-relaxed mb-4">AgencyDP uses cookies for several purposes:</p>
+              <p className="leading-relaxed mb-4">Webscon uses cookies for several purposes:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li><strong>Essential Cookies:</strong> Required for the operation of our website</li>
                 <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our website</li>
@@ -57,7 +57,7 @@ const CookiePolicy = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">First-Party Cookies</h3>
                   <p className="leading-relaxed">
-                    These cookies are set directly by AgencyDP and are used to improve your experience on our website.
+                    These cookies are set directly by Webscon and are used to improve your experience on our website.
                   </p>
                 </div>
 
@@ -152,8 +152,8 @@ const CookiePolicy = () => {
                 If you have any questions about our use of cookies, please contact us at:
               </p>
               <p className="mt-4 leading-relaxed">
-                <strong>AgencyDP</strong><br />
-                Email: hello@agencydp.com<br />
+                <strong>Webscon</strong><br />
+                Email: hello@webscon.com<br />
                 Phone: +1 (555) 123-4567
               </p>
             </section>
