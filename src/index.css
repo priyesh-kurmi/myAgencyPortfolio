@@ -147,3 +147,12 @@
 .animate-spin-reverse {
   animation: spin-reverse 20s linear infinite;
 }
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

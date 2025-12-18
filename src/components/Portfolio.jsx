@@ -1,28 +1,32 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 
 const Portfolio = () => {
   const projects = [
     {
       title: 'Noas Café',
-      category: 'Corporate Website',
+      category: 'Cafe Website',
       description: 'Premium specialty coffee and corporate catering platform across 9+ London locations',
       tags: ['React', 'Next.js', 'E-commerce'],
-      url: 'https://www.noas.uk/'
+      url: 'https://www.noas.uk/',
+      image: '/images/noas.png'
     },
     {
       title: 'Eversham Chauffeurs',
       category: 'Luxury Service Website',
       description: 'Elite chauffeur booking platform featuring premium fleet management and 24/7 service',
       tags: ['React', 'Booking System', 'CMS'],
-      url: 'https://www.evershamchauffeurs.co.uk/'
+      url: 'https://www.evershamchauffeurs.co.uk/',
+      image: '/images/eversham.png'
     },
     {
       title: 'Noas Catering',
       category: 'Catering Platform',
       description: 'London\'s trusted office and event catering service with custom menu ordering',
       tags: ['React', 'Order System', 'CMS'],
-      url: 'https://www.noascatering.co.uk/'
+      url: 'https://www.noascatering.co.uk/',
+      image: '/images/noascatering.png'
     }
   ];
 
@@ -66,56 +70,58 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, index) => (
-            <a
+            <motion.div
               key={index}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <motion.div
-                initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group relative bg-black/20 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden hover:border-white/10 hover:bg-black/30 transition-all duration-300 cursor-pointer"
-              >
-              {/* Project Image Placeholder */}
-              <div className="relative h-48 bg-white/5 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg className="w-20 h-20 text-blue-400/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-              </div>
-
-              {/* Project Info */}
-              <div className="p-6">
-                <div className="text-sm text-blue-400 font-semibold mb-3 uppercase tracking-wider">{project.category}</div>
-                <h3 className="text-xl font-bold mb-3 text-white transition-all">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-4 py-2 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full text-sm text-blue-300"
+              <CardContainer className="inter-var">
+                <CardBody className="bg-gray-900/50 relative group/card hover:shadow-2xl hover:shadow-blue-500/[0.1] border-white/[0.1] w-auto h-auto rounded-xl p-6 border">
+                  <CardItem
+                    translateZ="50"
+                    className="text-xl font-bold text-white mb-2"
+                  >
+                    {project.title}
+                  </CardItem>
+                  <CardItem
+                    translateZ="60"
+                    className="text-sm text-blue-400 font-semibold mb-3 uppercase tracking-wider"
+                  >
+                    {project.category}
+                  </CardItem>
+                  <CardItem translateZ="100" className="w-full mt-4">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-48 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    />
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ="60"
+                    className="text-gray-400 text-sm mt-4 leading-relaxed"
+                  >
+                    {project.description}
+                  </CardItem>
+                  <div className="flex justify-end items-center mt-6">
+                    <CardItem
+                      translateZ={20}
+                      as="a"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-colors"
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              </motion.div>
-            </a>
+                      View Project →
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
+            </motion.div>
           ))}
         </div>
         {/* View All Projects Button */}
@@ -124,7 +130,7 @@ const Portfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
+          className="text-center"
         >
           <Link to="/projects">
             <button className="px-8 py-3.5 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-base font-semibold transition-all hover:scale-[1.02] glow-blue-strong">
