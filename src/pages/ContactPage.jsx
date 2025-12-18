@@ -8,12 +8,36 @@ const ContactPage = () => {
     project: ''
   });
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission - you can integrate with your backend or email service
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will get back to you soon.');
-    setFormData({ name: '', email: '', project: '' });
+    setIsSubmitting(true);
+    setSubmitMessage('');
+    
+    try {
+      const response = await fetch('http://localhost:3001/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage('Thank you! Your message has been sent successfully.');
+        setFormData({ name: '', email: '', project: '' });
+      } else {
+        setSubmitMessage(data.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmitMessage('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -71,11 +95,7 @@ const ContactPage = () => {
           >
             <div>
               <div className="text-sm text-gray-500 mb-2 uppercase tracking-wider">Email</div>
-              <div className="text-lg font-semibold text-white">hello@webscon.com</div>
-            </div>
-            <div>
-              <div className="text-sm text-gray-500 mb-2 uppercase tracking-wider">Phone</div>
-              <div className="text-lg font-semibold text-white">+1 (555) 123-4567</div>
+              <div className="text-lg font-semibold text-white">webscon.in@gmail.com</div>
             </div>
             <div>
               <div className="text-sm text-gray-500 mb-2 uppercase tracking-wider">Response Time</div>
@@ -147,10 +167,18 @@ const ContactPage = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-8 py-3.5 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-base font-semibold transition-all hover:scale-[1.02] glow-blue-strong"
+                disabled={isSubmitting}
+                className="w-full px-8 py-3.5 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-base font-semibold transition-all hover:scale-[1.02] glow-blue-strong disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Get a Free Quote
+                {isSubmitting ? 'Sending...' : 'Get a Free Quote'}
               </button>
+
+              {/* Submit Message */}
+              {submitMessage && (
+                <div className={`text-center text-sm mt-4 ${submitMessage.includes('success') ? 'text-green-400' : 'text-red-400'}`}>
+                  {submitMessage}
+                </div>
+              )}
             </div>
           </motion.form>
         </div>

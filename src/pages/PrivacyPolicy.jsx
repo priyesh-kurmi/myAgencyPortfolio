@@ -86,8 +86,7 @@ const PrivacyPolicy = () => {
               </p>
               <p className="mt-4 leading-relaxed">
                 <strong>AgencyDP</strong><br />
-                Email: hello@agencydp.com<br />
-                Phone: +1 (555) 123-4567
+                Email: webscon.in@gmail.com
               </p>
             </section>
           </div>

@@ -122,7 +122,7 @@ const Pricing = () => {
                 </ul>
 
                 {/* CTA Button */}
-                <Link to="/contact" className="block">
+                <Link to="/schedule" className="block">
                   <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
                     plan.popular
                       ? 'bg-blue-600 text-white hover:bg-blue-700'
@@ -145,7 +145,7 @@ const Pricing = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-400 mb-4">Need a custom solution?</p>
-          <Link to="/contact">
+          <Link to="/schedule">
             <button className="px-8 py-3 bg-transparent border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg transition-all font-semibold">
               Contact Us for Custom Quote
             </button>

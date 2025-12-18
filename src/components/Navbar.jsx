@@ -73,22 +73,27 @@ const Navbar = () => {
             <button onClick={handleHomeClick} className="text-gray-300 hover:text-white transition-colors text-sm">
               Home
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors text-sm">
-              About
-            </button>
-            <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-white transition-colors text-sm">
-              Portfolio
-            </button>
-            <Link to="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
-              Contact
+            <Link to="/projects" className="text-gray-300 hover:text-white transition-colors text-sm">
+              Our Work
             </Link>
+            <button onClick={() => scrollToSection('pricing')} className="text-gray-300 hover:text-white transition-colors text-sm">
+              Pricing
+            </button>
+            <button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors text-sm">
+              About Us
+            </button>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
             <Link to="/contact">
               <button className="px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium">
-                Get In Touch
+                Contact Us
+              </button>
+            </Link>
+            <Link to="/schedule">
+              <button className="px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium">
+                Let's Connect
               </button>
             </Link>
           </div>
@@ -121,19 +126,24 @@ const Navbar = () => {
                 <button onClick={handleHomeClick} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
                   Home
                 </button>
-                <button onClick={() => scrollToSection('about')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
-                  About
-                </button>
-                <button onClick={() => scrollToSection('portfolio')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
-                  Portfolio
-                </button>
-                <Link to="/contact" className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block" onClick={() => setIsMenuOpen(false)}>
-                  Contact
+                <Link to="/projects" onClick={() => setIsMenuOpen(false)} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
+                  Our Work
                 </Link>
-                <div className="pt-4">
+                <button onClick={() => scrollToSection('pricing')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
+                  Pricing
+                </button>
+                <button onClick={() => scrollToSection('about')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
+                  About Us
+                </button>
+                <div className="pt-4 space-y-3">
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                     <button className="w-full px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium shadow-lg shadow-blue-500/20">
-                      Get In Touch
+                      Contact Us
+                    </button>
+                  </Link>
+                  <Link to="/schedule" onClick={() => setIsMenuOpen(false)}>
+                    <button className="w-full px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium shadow-lg shadow-blue-500/20">
+                      Let's Connect
                     </button>
                   </Link>
                 </div>

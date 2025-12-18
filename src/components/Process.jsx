@@ -170,7 +170,7 @@ const Process = () => {
           <p className="text-lg text-gray-400 mb-6">
             Ready to start your project?
           </p>
-          <Link to="/contact">
+          <Link to="/schedule">
             <button className="px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg text-sm font-medium transition-all">
               Let's Talk
             </button>

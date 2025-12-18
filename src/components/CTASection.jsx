@@ -109,7 +109,7 @@ const CTASection = () => {
                   viewport={{ once: false, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  <Link to="/contact">
+                  <Link to="/schedule">
                     <button className="px-10 py-4 bg-blue-600 text-white hover:bg-blue-700 rounded-xl text-lg font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50">
                       Book an Appointment
                     </button>

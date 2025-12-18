@@ -56,7 +56,7 @@ const Hero = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-6 sm:px-8">
-          <Link to="/contact" className="w-full sm:w-auto">
+          <Link to="/schedule" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-semibold">
               START YOUR PROJECT
             </button>

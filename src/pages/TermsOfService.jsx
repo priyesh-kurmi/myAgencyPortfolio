@@ -115,8 +115,7 @@ const TermsOfService = () => {
               </p>
               <p className="mt-4 leading-relaxed">
                 <strong>Webscon</strong><br />
-                Email: hello@webscon.com<br />
-                Phone: +1 (555) 123-4567
+                Email: webscon.in@gmail.com
               </p>
             </section>
           </div>
