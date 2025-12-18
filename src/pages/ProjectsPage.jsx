@@ -126,9 +126,9 @@ const ProjectsPage = () => {
             <div className="flex flex-col gap-4">
               {projects.map((project, index) => (
                 <motion.div
-                  key={index}
+                  key={`list-${index}`}
                   initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   onMouseEnter={(e) => handleListHover(e, index)}
@@ -157,9 +157,9 @@ const ProjectsPage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {projects.map((project, index) => (
                 <motion.div
-                  key={index}
+                  key={`grid-${index}`}
                   initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                 >
