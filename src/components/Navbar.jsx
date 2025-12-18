@@ -135,7 +135,7 @@ const Navbar = () => {
                 <button onClick={() => scrollToSection('about')} className="text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">
                   About Us
                 </button>
-                <div className="pt-4 space-y-3">
+                <div className="pt-4 flex flex-col gap-3">
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                     <button className="w-full px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-all text-sm font-medium shadow-lg shadow-blue-500/20">
                       Contact Us
